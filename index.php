@@ -2,7 +2,7 @@
 include_once ('inc/main.php');
 
 if (is_login()) {
-    header('location: home.php');
+    header('location: file-list.php');
 }
 else {
     header('location: login.php');
