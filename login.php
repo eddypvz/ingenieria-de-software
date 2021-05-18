@@ -16,6 +16,9 @@ if (isset($_POST['do_login'])) {
         header('location: index.php');
     }
 }
+if (isset($_GET['do_logout'])) {
+    do_logout();
+}
 ?>
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
@@ -43,7 +46,10 @@ if (isset($_POST['do_login'])) {
     <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
         <div class="white-box">
             <div class="loginBox">
-                <div class="text-center"><h3 class="box-title">Iniciar sesión</h3></div>
+                <div class="text-center mb-5">
+                    <img src="plugins/images/logo.png" alt="homepage" style="max-width: 200px"/>
+                </div>
+                <div class="text-center"><h4 class="box-title">Iniciar sesión</h4></div>
                 <form action="login.php" method="POST" class="form-horizontal form-material">
                     <div class="text-danger p-2 text-center">
                         <?php print $loginError ?>

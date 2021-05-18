@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 15-05-2021 a las 15:22:05
+-- Tiempo de generación: 18-05-2021 a las 17:40:29
 -- Versión del servidor: 8.0.21
 -- Versión de PHP: 7.3.7
 
@@ -21,6 +21,21 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `ingenieria_software`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `file`
+--
+
+CREATE TABLE `file` (
+  `id_file` int NOT NULL,
+  `name` varchar(200) CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL,
+  `sw_date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_user` int NOT NULL,
+  `status` varchar(20) COLLATE utf8_spanish_ci NOT NULL DEFAULT 'saved',
+  `file_url` text CHARACTER SET utf8 COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
 
@@ -50,6 +65,12 @@ INSERT INTO `user` (`id_user`, `user`, `name`, `lastname`, `password`, `status`)
 --
 
 --
+-- Indices de la tabla `file`
+--
+ALTER TABLE `file`
+  ADD PRIMARY KEY (`id_file`);
+
+--
 -- Indices de la tabla `user`
 --
 ALTER TABLE `user`
@@ -58,6 +79,12 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `file`
+--
+ALTER TABLE `file`
+  MODIFY `id_file` int NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `user`

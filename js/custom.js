@@ -32,4 +32,35 @@ $(function() {
     $(window).ready(setsidebartype);
     $(window).on("resize", setsidebartype);
 
+    // al cambiar el select de operacion
+    $('.fileOperation').change(function () {
+        const self = this;
+        const idFile = $(this).attr('data-file');
+        const urlFile = $(this).attr('data-url');
+        const operation = $(this).val();
+
+        if (operation === 'download') {
+            window.open(urlFile);
+        }
+        else if (operation === 'delete') {
+            if (confirm('¿Está seguro de eliminar?')) {
+                $.ajax({
+                    url: "upload.php",
+                    method: "POST",
+                    data: {
+                        deleteFile: idFile
+                    },
+                    success: function (data) {
+                        if (data == 1) {
+                            $(self).parent().parent().remove();
+                        }
+                    },
+                    error: function () {
+                        alert('Error al eliminar, por favor intente de nuevo');
+                    }
+                })
+            }
+        }
+        $(this).prop('selectedIndex',0);
+    });
 });

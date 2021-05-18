@@ -31,6 +31,10 @@
 <script src="js/waves.js"></script>
 <!--Menu sidebar -->
 <script src="js/sidebarmenu.js"></script>
+
+<!--dropzone-->
+<script src="plugins/dropzone/dropzone.js"></script>
+
 <!--Custom JavaScript -->
 <script src="js/custom.js"></script>
 <!--This page JavaScript -->

@@ -35,6 +35,18 @@ function do_login($user, $password) {
         return true;
     }
 }
+function do_logout() {
+    $_SESSION['login'] = false;
+    $_SESSION['login_data'] = [];
+    header('location: index.php');
+}
+
+function validateAccess() {
+    if (!is_login()) {
+        header('location: login.php');
+    }
+}
 
 // globales
 $db = new DB();
+
