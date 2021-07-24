@@ -12,7 +12,7 @@ validateAccess();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex,nofollow">
     <title>
-        Ingenieria de software
+        Archivos - Eddy Pérez
     </title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="plugins/images/favicon.png">

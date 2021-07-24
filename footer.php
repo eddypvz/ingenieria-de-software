@@ -6,7 +6,7 @@
 <!-- footer -->
 <!-- ============================================================== -->
 <footer class="footer text-center">
-    2021 © Ingenieria de software - UMG
+    2021 © Archivos - Eddy Pérez - UMG
 </footer>
 <!-- ============================================================== -->
 <!-- End footer -->

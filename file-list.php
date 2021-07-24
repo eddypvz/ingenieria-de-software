@@ -1,5 +1,6 @@
 <?php
 include_once('header.php');
+
 ?>
     <div class="row">
         <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
@@ -28,8 +29,10 @@ include_once('header.php');
                                             U.user as 'UserSlug'  
                                          FROM file AS F
                                          JOIN user AS U ON U.id_user = F.id_user
-                                         WHERE F.status = 'saved'";
+                                         WHERE F.status = 'saved'
+                                         AND F.id_user = {$_SESSION['login_data']['id']}";
                             $files = $db->get_array($strQuery);
+
                             foreach ($files as $file) {
                                 ?>
                                 <tr>
